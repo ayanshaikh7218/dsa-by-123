@@ -1,0 +1,79 @@
+import java.util.Scanner; class 
+ArrayDemo { 
+ int[] arr = new int[10]; 
+int n; public void get() 
+{ 
+ Scanner scanner = new Scanner(System.in); 
+System.out.print("\n Enter the size of array: "); 
+n = scanner.nextInt(); 
+ System.out.print("Enter the element into an array: "); 
+ for (int i = 0; i < n; i++) { 
+arr[i] = scanner.nextInt(); 
+ } 
+ } 
+ public void insert() { 
+ Scanner scanner = new Scanner(System.in); 
+int num, loc; 
+ System.out.print("Enter element for insert: 
+"); num = scanner.nextInt(); 
+System.out.print("Enter location: "); loc = 
+scanner.nextInt(); for (int i = n; i >= loc; i--) { 
+arr[i] = arr[i - 1]; 
+ } 
+ n++; 
+arr[loc - 1] = num; 
+} 
+ public void delet() { 
+ Scanner scanner = new Scanner(System.in); 
+ int item, k; 
+ 
+ 
+ System.out.print("\n Enter the position on which you want to delete: "); 
+k = scanner.nextInt(); 
+ k = k - 1; item = arr[k]; 
+for (int j = k; j < n - 1; j++) { 
+arr[j] = arr[j + 1]; 
+ } 
+ n = n - 1; 
+ } 
+ public void display() { 
+ System.out.print("\n Your elements of an array are: "); 
+ for (int i = 0; i < n; i++) { 
+ System.out.print("\n" + arr[i]); 
+ } 
+ } 
+ public void search() { 
+ Scanner scanner = new Scanner(System.in); 
+ int ele; 
+ System.out.print("\n Enter the element to be searched: 
+"); ele = scanner.nextInt(); for (int i = 0; i < n; i++) { if 
+(arr[i] == ele) { 
+ System.out.println("Element found"); 
+return; 
+ } 
+ } 
+System.out.println("Element not found"); 
+} 
+ public static void main(String[] args) { 
+Scanner scanner = new Scanner(System.in); 
+ int ch; 
+ ArrayDemo a1 = new ArrayDemo(); 
+ 
+ 
+ a1.get(); 
+while (true) { 
+ System.out.print("\n MENU"); 
+ System.out.print("\n 1. Insert"); 
+ System.out.print("\n 2. Delete"); 
+ System.out.print("\n 3. Display"); 
+ System.out.print("\n 4. Search"); 
+System.out.print("\n Enter your choice: "); 
+ch = scanner.nextInt(); switch (ch) { case 
+1: a1.insert(); break; case 2: a1.delet(); 
+break; case 3: a1.display(); break; case 
+4: a1.search(); break; default: 
+ System.out.println("Enter proper choice"); 
+ } 
+} 
+} 
+} 
