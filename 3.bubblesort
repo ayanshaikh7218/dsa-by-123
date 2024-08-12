@@ -1,35 +1,38 @@
-import java.util.Scanner; 
-class Bsort{ int [] a = 
-new int [30]; int N; 
-public void get(){ 
-Scanner ls =new Scanner(System.in); 
-System.out.print("\nEnter how many elements in array"); 
- 
- 
-N = ls.nextInt(); 
-System.out.print("\nEnter the elements:"); 
-for(int i=0; i<N;i++){ a[i] 
-= ls.nextInt(); 
-} 
-} 
-public void sort(){ 
-int temp; for(int 
-j=0;j<N;j++){ if 
-(a[j]>a[j+1]){ 
-temp=a[j]; 
-} 
-} 
-} 
-public void put(){ 
-System.out.println("\nElement after sorting are:"); 
-for(int i=0; i<N;i++){ 
-System.out.println(a[i]); 
-} 
-} 
-public static void main(String[]args){ Bsort 
-b=new Bsort(); 
-b.get(); 
-b.sort(); 
-b.put(); 
-} 
-} 
+import java.util.Scanner;
+class BubbleSort {
+ int[] a = new int[10];
+ int n;
+ void get() {
+ Scanner scanner = new Scanner(System.in);
+ System.out.println("Number of elements you want");
+ n = scanner.nextInt();
+ System.out.println("Enter array elements");
+ for (int i = 0; i < n; i++) {
+ a[i] = scanner.nextInt();
+ }
+ }
+ void sort() {
+ int temp;
+ for(int i = 0; i < n; i++) {
+ for (int j = 0; j < n; j++) {
+ if (a[j] > a[j + 1]) {
+ temp = a[j];
+ a[j] = a[j + 1];
+ a[j + 1] = temp;
+ }
+ }
+ }
+ }
+ void display() {
+ System.out.println("Array after sorting:");
+ for(int i = 0; i < n; i++) {
+ System.out.print(a[i] + " ");
+ }
+ }
+ public static void main(String[] args) {
+ BubbleSort obj = new BubbleSort();
+ obj.get();
+ obj.sort();
+ obj.display();
+}
+ }
