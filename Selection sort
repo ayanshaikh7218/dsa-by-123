@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Ssort {
+
+    int[] a = new int[10];
+    int n, min, loc, temp;
+
+    void get() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("No of element you want");
+        n = scanner.nextInt();
+        System.out.println("\n Enter array elements");
+        for (int i = 0; i < n; i++) {
+            a[i] = scanner.nextInt();
+        }
+    }
+
+    void sort() {
+        for (int i = 0; i < n; i++) {
+            min = a[i];
+            loc = i;
+            for (int j = i + 1; j < n; j++) {
+                if (min > a[j]) {
+                    min = a[j];
+                    loc = j;
+                }
+            }
+            temp = a[i];
+            a[i] = a[loc];
+            a[loc] = temp;
+        }
+    }
+
+    void display() {
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Ssort obj = new Ssort();
+        obj.get();
+        obj.sort();
+        obj.display();
+    }
+}
